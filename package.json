@@ -1,0 +1,26 @@
+{
+  "name": "test_work",
+  "version": "1.0.0",
+  "description": "Test work to evaluate skills in NodeJS",
+  "author": "RomanPushtuk",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \".\\**\\*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "start-app": "yarn run build && node .\\lib\\app\\index.js",
+    "start-real-sync": "yarn run build && node .\\lib\\sync\\index.js",
+    "start-full-sync": "yarn run build && node .\\lib\\sync\\index.js --full-reindex"
+  },
+  "dependencies": {
+    "@faker-js/faker": "8.0.1",
+    "mongodb": "^5.5.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.1.3",
+    "prettier": "^2.8.8",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^5.0.4"
+  }
+}
