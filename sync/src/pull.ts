@@ -1,4 +1,5 @@
 import { StatCustomer } from './types';
+import { PULL_SIZE } from '../constnats';
 
 export class Pull {
   private isStarted: boolean = false;
@@ -8,8 +9,8 @@ export class Pull {
 
   async add(customer: StatCustomer) {
     this.pull.push(customer);
-    if (this.pull.length >= 150) {
-      const thousandCustomers = this.pull.splice(0, 150);
+    if (this.pull.length >= PULL_SIZE) {
+      const thousandCustomers = this.pull.splice(0, PULL_SIZE);
       await this.emitOverflow(thousandCustomers);
     }
   }
